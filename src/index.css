@@ -285,11 +285,12 @@ margin-left: 49px;
   
 .reserveMainLeft{
 width: 40.16%;
+min-width: 481px;
 }
 
 .reserveMainRight{
   width: 31.91%;
-
+  min-width: 383px;
 }
 .reserveRoomName{
   margin: 0;
@@ -395,7 +396,7 @@ letter-spacing: 2.19px;
   line-height: 27px;
 }
 .reserveMainMid{
-  width: 10.75%;
+  width: 129px;
   text-align: end;
 }
 .css-s8aszu{
@@ -412,12 +413,12 @@ letter-spacing: 2.19px;
   margin-top: 26px;
 }
 .doReserveButton{
-  /* width: 118px;
-  height: 53px; */
-  padding-top: 15px;
+  width: 118px;
+  height: 53px;
+  /* padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 23px;
-  padding-right: 23px;
+  padding-right: 23px; */
   background: #575757;
   font-size: 16px;
   color: #FFFFFF;

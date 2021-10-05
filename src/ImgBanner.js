@@ -9,8 +9,10 @@ const useStyles = makeStyles((theme) => ({
     modal: {
         display: 'inline-block',
 
-        width: '100vw',
-        height: '100vh',
+        // width: '100vw',
+        // height: '100vh',
+        minWidth: '1200px',
+        minHeight: '800px',
     },
     modalColumn: {
     

@@ -272,8 +272,8 @@ export default function Reserve(props) {
                         roomId={props.match.params.id}
                         postApiBooking={postApiBooking}
                     />
-                    <div class="doReserve"style={{marginLeft:'52px',backgroundColor:'#f00'}}>
-                        <div class="doReserveButton" onClick={() => {ApiDeleteAllBooking()}}>
+                    <div class="doReserve"style={{marginLeft:'52px'}}>
+                        <div class="doReserveButton" style={{backgroundColor:'#f00',width: '153px'}} onClick={() => {ApiDeleteAllBooking()}}>
                             刪除所有預約
                         </div>
                         <div class="doDeleteButtonBG stripeBlack24"> </div>

@@ -149,7 +149,7 @@ export default function ReserveForm(props) {
             setTotalPrice('?')
             return 0
         }
-        console.log('end不小於start')
+        // console.log('end不小於start')
         let todayType = startDayType
         const realDateArr=[]
         for (let i = 0; i <= startToEndDay; i++) {

@@ -32,7 +32,7 @@ function HomePage() {
             .then((data) => {
                 console.log('data', data)
                 setApiData(data.items)
-                console.log('apiData', apiData)
+                // console.log('apiData', apiData)
                 setNowBG(data.items[4].imageUrl)
                 setNowRoomName(data.items[4].name)
                 setNowRoomNumber("05")

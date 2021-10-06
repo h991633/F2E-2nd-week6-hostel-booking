@@ -154,7 +154,9 @@ export default function Reserve(props) {
                     <div class="stripeBlack2percent reserveTitleLeftBG"></div>
                     <div class="reserveTitleRight">
                         <div class="stripeBlack  reserveTitleRightBG"></div>
+                        <a href="/F2E-2nd-week6-hostel-booking/">
                         <h1 class="reserveTitleWord">WhiteSpace</h1>
+                        </a>
                     </div>
                 </div>
                 <ImgBanner name={name} imageUrl={imageUrl} />

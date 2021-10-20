@@ -8,8 +8,8 @@ import Fade from '@material-ui/core/Fade'
 
 import BasicDatePicker from './BasicDatePicker'
 
-import { CheckCircleOutlined } from '@ant-design/icons'
-import isSameDay from 'date-fns/isSameDay';
+import { CheckCircleOutlined, LoadingOutlined } from '@ant-design/icons'
+import isSameDay from 'date-fns/isSameDay'
 const useStyles = makeStyles((theme) => ({
     modal: {
         display: 'flex',
@@ -39,12 +39,11 @@ const useStyles = makeStyles((theme) => ({
         height: '485px',
         background: 'white',
         boxShadow: '0 2px 4px 0 rgba(0,0,0,0.50)',
-        fontWeight: "bold",
+        fontWeight: 'bold',
     },
     formTop: {
         paddingTop: '27px',
         paddingLeft: '42px',
-        
     },
     formTitle: {
         margin: '0',
@@ -98,11 +97,12 @@ export default function ReserveForm(props) {
 
     const [openResult, setOpenResult] = useState(false)
     const [isResultSuccess, setIsResultSuccess] = useState(false)
-    const [resultMsg, setResultMsg] = useState("請輸入姓名")
+    const [resultMsg, setResultMsg] = useState('請輸入姓名')
     const [reserveDateArr, setReserveDateArr] = useState([])
     //reserveDateArr 準備預約的日期
-    const bookedDateArr=props.bookingDateArr
+    const bookedDateArr = props.bookingDateArr
     //bookedDateArr 已被預約的日期
+    const [isLoading, setIsLoading] = useState(false)
     const handleOpen = () => {
         setOpen(true)
     }
@@ -126,19 +126,17 @@ export default function ReserveForm(props) {
             setReserveEndDate(ReserveDate)
         }
     }
-    const datePlus = (date,day)=>{
-        let anotherDate=new Date(date)
+    const datePlus = (date, day) => {
+        let anotherDate = new Date(date)
         //深拷貝
-        anotherDate.setDate(anotherDate.getDate()+day);//day可以為負數，意思是：昨天
-        return anotherDate;
-        }
+        anotherDate.setDate(anotherDate.getDate() + day) //day可以為負數，意思是：昨天
+        return anotherDate
+    }
 
     const countDay = () => {
-        
-
         const weekType = ['h', 'w', 'w', 'w', 'w', 'h', 'h']
         const dayTypeArr = []
-        
+
         const startDayType = reserveStartDate.getDay()
         //.getDay() 日 一 二~六 回傳值 0 1 2 ~ 6
         const startToEndDay = Math.round((reserveEndDate - reserveStartDate) / 86400000)
@@ -151,11 +149,10 @@ export default function ReserveForm(props) {
         }
         // console.log('end不小於start')
         let todayType = startDayType
-        const realDateArr=[]
+        const realDateArr = []
         for (let i = 0; i <= startToEndDay; i++) {
-           
             dayTypeArr.push(weekType[todayType])
-            realDateArr.push(datePlus(reserveStartDate,i))
+            realDateArr.push(datePlus(reserveStartDate, i))
             if (todayType < 6) {
                 todayType += 1
             } else {
@@ -173,11 +170,42 @@ export default function ReserveForm(props) {
         }
         setReserveDateCorrect(true)
     }
-    const dateFormat=(date)=>{
-        let yyyy=date.getFullYear()
-        let mm=(date.getMonth()+1)<10?"0"+(date.getMonth()+1):""+(date.getMonth()+1)
-        let dd=date.getDate()<10?"0"+date.getDate():""+date.getDate()
-        return yyyy+"-"+mm+"-"+dd
+    const dateFormat = (date) => {
+        let yyyy = date.getFullYear()
+        let mm = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : '' + (date.getMonth() + 1)
+        let dd = date.getDate() < 10 ? '0' + date.getDate() : '' + date.getDate()
+        return yyyy + '-' + mm + '-' + dd
+    }
+    const postApiBooking = (id, name = 'HELL', tel = '0987654321', date = ['2021-10-10']) => {
+        fetch('https://challenge.thef2e.com/api/thef2e2019/stage6/room/' + id, {
+            method: 'POST',
+            body: JSON.stringify({
+                name: name,
+                tel: tel,
+                date: date,
+            }),
+
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ydf7YJAusCU3YIdo4zZGxDzGu6qHJ2KI5aozP6SIcOsUnpaCdqv4uPJv9rSP',
+            },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log('postApiBooking', data)
+                if (typeof data.message == 'undefined') {
+                    props.getApiRoomDetail(id)
+                } else {
+                    console.log('data.message', data.message)
+                    setIsResultSuccess(false)
+                    setResultMsg(data.message+"，請將頁面重新整理以獲得最新預約情況")
+                }
+                setIsLoading(false)
+                handleOpenResult()
+            })
+            .catch((e) => {
+                console.log('ERR:' + e)
+            })
     }
     const confirmReserve = () => {
         console.log('確定預約')
@@ -186,28 +214,26 @@ export default function ReserveForm(props) {
         console.log('reserveStartDate', reserveStartDate)
         console.log('reserveEndDate', reserveEndDate)
         console.log('totalPrice', totalPrice)
-        console.log('reserveDateArr',reserveDateArr);
-        console.log('bookedDateArr',bookedDateArr);
-        
-        let isBookedDate=reserveDateArr.some(RD=> bookedDateArr.some( BD=>isSameDay(RD,BD)))
-        
+        console.log('reserveDateArr', reserveDateArr)
+        console.log('bookedDateArr', bookedDateArr)
+
+        let isBookedDate = reserveDateArr.some((RD) => bookedDateArr.some((BD) => isSameDay(RD, BD)))
+
         //isSameDay(ADate, BDate) 會比對A時間跟B時間是不是同一天
         // let A=new Date()
         // let B=new Date()
         // console.log('ABisSameDay',isSameDay(A,B));
-        
+
         //some()會將陣列中的「每一個」元素帶入指定的函式內做判斷，
         //只要有任何一個元素符合判斷條件，就會回傳 true，如果全都不符合，就會回傳 false。
-        let nowTime=new Date()
-        let isBeforeDate=reserveDateArr.some(RD=>RD<nowTime)
-        
-        
+        let nowTime = new Date()
+        let isBeforeDate = reserveDateArr.some((RD) => RD < nowTime)
+
         if (customerName == '') {
             setResultMsg('請輸入姓名')
             handleClose()
             setIsResultSuccess(false)
             handleOpenResult()
-            
         } else if (customerPhone == '') {
             setResultMsg('請輸入電話')
             handleClose()
@@ -236,17 +262,17 @@ export default function ReserveForm(props) {
             setIsResultSuccess(false)
             handleOpenResult()
         } else {
-           
             setIsResultSuccess(true)
             setResultMsg('預約成功')
             handleClose()
+            setIsLoading(true)
             // bookedDateArr.push(...reserveDateArr)
             // props.setBookingDateArr(bookedDateArr.slice(0))
             //(id,name="HELL",tel="0987654321",date=[["2021-10-10"]])
-            let newBookingDateArr=reserveDateArr.map((v)=>dateFormat(v))
+            let newBookingDateArr = reserveDateArr.map((v) => dateFormat(v))
             // console.log('newBookingDateArr',newBookingDateArr);
-            props.postApiBooking(props.roomId,customerName,customerPhone,newBookingDateArr)
-            handleOpenResult()
+            postApiBooking(props.roomId, customerName, customerPhone, newBookingDateArr)
+            // handleOpenResult() 移到postApiBooking
         }
     }
 
@@ -276,6 +302,14 @@ export default function ReserveForm(props) {
                 </div>
                 <div class="doReserveButtonBG stripeBlack24"></div>
             </div>
+            {isLoading ? (
+                <div style={{ position: 'fixed', top: '50%', left: '50%' }}>
+                    <LoadingOutlined style={{ color: '#ADADAD', fontSize: '40px' }} />
+                </div>
+            ) : (
+                ''
+            )}
+
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -397,9 +431,7 @@ export default function ReserveForm(props) {
                                         <CheckCircleOutlined style={{ color: '#ADE8C6', fontSize: '70px' }} />
                                     </div>
                                 ) : (
-                                    <div class="resultMsg">
-                                        {resultMsg}
-                                    </div>
+                                    <div class="resultMsg">{resultMsg}</div>
                                 )}
 
                                 <div class="finalCheck">

@@ -84,34 +84,7 @@ export default function Reserve(props) {
                 window.location = '/404'
             })
     }
-    const postApiBooking = (id,name="HELL",tel="0987654321",date=["2021-10-10"]) => {
-        
-        fetch('https://challenge.thef2e.com/api/thef2e2019/stage6/room/' + id, {
-            method: 'POST',
-            body:JSON.stringify({
-                "name": name,
-                "tel": tel,
-                "date": date
-            }),
-            
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ydf7YJAusCU3YIdo4zZGxDzGu6qHJ2KI5aozP6SIcOsUnpaCdqv4uPJv9rSP',
-                
-            },
-            
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log('postApiBooking', data)
-             
-                getApiRoomDetail(props.match.params.id)
-            })
-            .catch((e) => {
-                console.log('ERR:' + e)
-                
-            })
-    }
+   
     const ApiDeleteAllBooking = () => {
         
         fetch('https://challenge.thef2e.com/api/thef2e2019/stage6/rooms', {
@@ -272,7 +245,7 @@ export default function Reserve(props) {
                         bookingDateArr={bookingDateArr}
                         setBookingDateArr={setBookingDateArr}
                         roomId={props.match.params.id}
-                        postApiBooking={postApiBooking}
+                        getApiRoomDetail={getApiRoomDetail}
                     />
                     <div class="doReserve"style={{marginLeft:'52px'}}>
                         <div class="doReserveButton" style={{backgroundColor:'#f00',width: '153px'}} onClick={() => {ApiDeleteAllBooking()}}>

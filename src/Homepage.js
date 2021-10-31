@@ -79,7 +79,7 @@ function HomePage() {
     
 
     return (
-        <div class="roomImg" style={{ width: '100%', height: '100vh', background: 'url(' + nowBG + ')' }}>
+        <div class="roomImg" style={{ width: '100vw', minHeight: '100vh', background: 'url(' + nowBG + ')' }}>
             <header class="indexHeader">
                 <div class="title">
                     <div class="stripe41 titleLeftBG"></div>

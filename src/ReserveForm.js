@@ -35,8 +35,8 @@ const useStyles = makeStyles((theme) => ({
         outline: 0,
     },
     form: {
-        width: '423px',
-        height: '485px',
+        // width: '423px',
+        // height: '485px',
         background: 'white',
         boxShadow: '0 2px 4px 0 rgba(0,0,0,0.50)',
         fontWeight: 'bold',
@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     formTop: {
         paddingTop: '27px',
         paddingLeft: '42px',
+        paddingRight: '42px',
     },
     formTitle: {
         margin: '0',

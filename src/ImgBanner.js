@@ -9,10 +9,10 @@ const useStyles = makeStyles((theme) => ({
     modal: {
         display: 'inline-block',
 
-        // width: '100vw',
-        // height: '100vh',
-        minWidth: '1200px',
-        minHeight: '800px',
+        width: '100vw',
+        height: '100vh',
+        // minWidth: '1200px',
+        // minHeight: '800px',
     },
     modalColumn: {
     
@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ImgBanner(props) {
     const classes = useStyles()
     const [open, setOpen] = React.useState(false)
+    const imageName=props.name
     const imageUrl=props.imageUrl
 //     const [imageUrl,setImageUrl]=React.useState(["https://images.unsplash.com/photo-1515511856280-7b23f68d2996?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80",
 //     "https://images.unsplash.com/photo-1526880792616-4217886b9dc2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
@@ -125,21 +126,21 @@ export default function ImgBanner(props) {
                 <Fade in={open}>
                     <div className={classes.modalColumn}>
                         <div className={classes.modalTop}>
-                            <LeftOutlined style={{ fontSize: '38px', color: 'white', marginLeft: '149px' }} onClick={previousPage} />
+                            <LeftOutlined style={{ fontSize: '38px', color: 'white', marginLeft: 'calc(100vw * 100 / 1499)' }} onClick={previousPage} />
                             <div className={classes.paper}>
                                 <div style={{ fontSize: '0' }}>
                                     <img
                                         src={nowImageUrl}
                                         alt="房間圖片"
-                                        style={{ maxHeight: '462px' }}
+                                        style={{ maxHeight: '462px',maxWidth:'calc(100vw * 1000 / 1499)' }}
                                     ></img>
                                 </div>
                             </div>
-                            <RightOutlined style={{ fontSize: '38px', color: 'white', marginRight: '149px' }} onClick={nextPage} />
+                            <RightOutlined style={{ fontSize: '38px', color: 'white', marginRight: 'calc(100vw * 100 / 1499)' }} onClick={nextPage} />
                         </div>
                         <div className={classes.modalBottom}>
-                          <span style={{marginRight:'278px',fontSize: '16px',color: '#FFFFFF',letterSpacing: '1.67px'}}>Single Room</span>
-                          <span style={{marginLeft:'278px',fontSize: '16px',color: '#FFFFFF',letterSpacing: '1.67px'}}>{imgPage}/3</span>
+                          <span style={{marginRight:'calc(100vw * 278 / 1499)',fontSize: '16px',color: '#FFFFFF',letterSpacing: '1.67px'}}>{imageName}</span>
+                          <span style={{marginLeft:'calc(100vw * 278 / 1499)',fontSize: '16px',color: '#FFFFFF',letterSpacing: '1.67px'}}>{imgPage}/3</span>
                         </div>
                     </div>
                 </Fade>

@@ -239,7 +239,7 @@ body {
     margin: 0;
     /* width: 281px;
   height: 20px; */
-    width: calc((100vw * 305 / 1499)-30px);
+    /* width: calc((100vw * 305 / 1499)-30px); */
     height: calc(100vw * 20 / 1499);
     min-height: 10px;
     min-width: 106px;

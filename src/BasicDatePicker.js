@@ -12,7 +12,7 @@ import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 import DatePicker from '@material-ui/lab/DatePicker';
 
 export default function BasicDatePicker(props) {
-  const [value, setValue] = React.useState(props.showDate);
+  // const [value, setValue] = React.useState(props.showDate);
   // console.log('BasicDatePicker(props)',props);
   
   return (

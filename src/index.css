@@ -3,7 +3,7 @@ body {
     /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-    font-family: -webkit-pictograph;
+    /* font-family: -webkit-pictograph; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -42,7 +42,7 @@ body {
     align-items: center;
     color: white;
     background-color: rgba(255, 255, 255, 0.5);
-    font-family: -webkit-pictograph;
+    /* font-family: -webkit-pictograph; */
 
     /* font-family: NotoSansCJKtc-Medium; */
     font-size: 31px;
@@ -218,8 +218,6 @@ body {
 .roomSelect {
     position: relative;
     margin: 0;
-    /* width: 305px;
-  height: 404px; */
     width: calc(100vw * 305 / 1499);
     height: calc(100vw * 404 / 1499);
     min-width: 136px;
@@ -229,7 +227,7 @@ body {
     background-color: white;
     display: flex;
     flex-direction: column;
-    /* padding-top: 18.5px; */
+    justify-content:space-around;
     padding-top: calc(100vw * 18.5 / 1499);
 }
 .roomSelectBG {
@@ -239,15 +237,16 @@ body {
     margin: 0;
     /* width: 281px;
   height: 20px; */
-    /* width: calc((100vw * 305 / 1499)-30px); */
+    /* width: calc((100vw * 275 / 1499)); */
     height: calc(100vw * 20 / 1499);
     min-height: 10px;
     min-width: 106px;
     max-width: 281px;
+   
 }
 
 .roomButton {
-    font-family: -webkit-pictograph;
+    /* font-family: -webkit-pictograph; */
     font-size: 14px;
     color: #000000;
     letter-spacing: 1.46px;

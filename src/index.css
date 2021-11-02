@@ -229,6 +229,7 @@ body {
     flex-direction: column;
     justify-content:space-around;
     padding-top: calc(100vw * 18.5 / 1499);
+    padding-bottom: calc(100vw * 18.5 / 1499);
 }
 .roomSelectBG {
     position: relative;

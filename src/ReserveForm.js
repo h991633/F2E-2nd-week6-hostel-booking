@@ -76,7 +76,8 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translate(0px, 9px)',
     },
     result: {
-        width: '423px',
+        width: ' calc(100vw * 423 / 1499)',
+        minWidth :'280px',
 
         background: 'white',
         boxShadow: '0 2px 4px 0 rgba(0,0,0,0.50)',

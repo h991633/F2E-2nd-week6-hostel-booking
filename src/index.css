@@ -222,7 +222,7 @@ body {
   height: 404px; */
     width: calc(100vw * 305 / 1499);
     height: calc(100vw * 404 / 1499);
-    min-width: 174px;
+    min-width: 136px;
     min-height: 300px;
     max-width: 305px;
     max-height: 404px;
@@ -242,7 +242,7 @@ body {
     width: calc((100vw * 305 / 1499)-30px);
     height: calc(100vw * 20 / 1499);
     min-height: 10px;
-    min-width: 144px;
+    min-width: 106px;
     max-width: 281px;
 }
 

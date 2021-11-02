@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/F2E-2nd-week6-hostel-booking/static/css/main.da714618.chunk.css",
-    "main.js": "/F2E-2nd-week6-hostel-booking/static/js/main.0cbef936.chunk.js",
-    "main.js.map": "/F2E-2nd-week6-hostel-booking/static/js/main.0cbef936.chunk.js.map",
+    "main.css": "/F2E-2nd-week6-hostel-booking/static/css/main.7471ef6d.chunk.css",
+    "main.js": "/F2E-2nd-week6-hostel-booking/static/js/main.0b852429.chunk.js",
+    "main.js.map": "/F2E-2nd-week6-hostel-booking/static/js/main.0b852429.chunk.js.map",
     "runtime-main.js": "/F2E-2nd-week6-hostel-booking/static/js/runtime-main.bf80dbe2.js",
     "runtime-main.js.map": "/F2E-2nd-week6-hostel-booking/static/js/runtime-main.bf80dbe2.js.map",
     "static/js/2.ed31e060.chunk.js": "/F2E-2nd-week6-hostel-booking/static/js/2.ed31e060.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.191cef6f.chunk.js": "/F2E-2nd-week6-hostel-booking/static/js/3.191cef6f.chunk.js",
     "static/js/3.191cef6f.chunk.js.map": "/F2E-2nd-week6-hostel-booking/static/js/3.191cef6f.chunk.js.map",
     "index.html": "/F2E-2nd-week6-hostel-booking/index.html",
-    "static/css/main.da714618.chunk.css.map": "/F2E-2nd-week6-hostel-booking/static/css/main.da714618.chunk.css.map",
+    "static/css/main.7471ef6d.chunk.css.map": "/F2E-2nd-week6-hostel-booking/static/css/main.7471ef6d.chunk.css.map",
     "static/js/2.ed31e060.chunk.js.LICENSE.txt": "/F2E-2nd-week6-hostel-booking/static/js/2.ed31e060.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bf80dbe2.js",
     "static/js/2.ed31e060.chunk.js",
-    "static/css/main.da714618.chunk.css",
-    "static/js/main.0cbef936.chunk.js"
+    "static/css/main.7471ef6d.chunk.css",
+    "static/js/main.0b852429.chunk.js"
   ]
 }

@@ -19,9 +19,14 @@ export default function BasicDatePicker(props) {
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
         // label="Basic example"
-        value={value}
+        // value={value}
+        // onChange={(newValue) => {
+        //   setValue(newValue);
+        //   props.setReserveDate(newValue,props.type)
+        // }}
+        value={props.showDate}
         onChange={(newValue) => {
-          setValue(newValue);
+          
           props.setReserveDate(newValue,props.type)
         }}
         renderInput={(params) => <TextField {...params} />}

@@ -123,6 +123,7 @@ export default function ReserveForm(props) {
     const setReserveDate = (ReserveDate, type) => {
         if (type == 'start') {
             setReserveStartDate(ReserveDate)
+            setReserveEndDate(datePlus(ReserveDate,1))
         }
         if (type == 'end') {
             setReserveEndDate(ReserveDate)
@@ -134,14 +135,53 @@ export default function ReserveForm(props) {
         anotherDate.setDate(anotherDate.getDate() + day) //day可以為負數，意思是：昨天
         return anotherDate
     }
+    //邏輯是10/11~10/12算兩夜
+    // const countDay = () => {
+    //     const weekType = ['h', 'w', 'w', 'w', 'w', 'h', 'h']
+    //     const dayTypeArr = []
 
+    //     const startDayType = reserveStartDate.getDay()
+    //     //.getDay() 日 一 二~六 回傳值 0 1 2 ~ 6
+    //     const startToEndDay = Math.round((reserveEndDate - reserveStartDate) / 86400000)
+    //     if (startToEndDay < 0) {
+    //         setWeekday('?')
+    //         setHoliday('?')
+    //         setReserveDateCorrect(false)
+    //         setTotalPrice('?')
+    //         return 0
+    //     }
+    //     // console.log('end不小於start')
+    //     let todayType = startDayType
+    //     const realDateArr = []
+    //     for (let i = 0; i <= startToEndDay; i++) {
+    //         dayTypeArr.push(weekType[todayType])
+    //         realDateArr.push(datePlus(reserveStartDate, i))
+    //         if (todayType < 6) {
+    //             todayType += 1
+    //         } else {
+    //             todayType = 0
+    //         }
+    //     }
+    //     let wDay = dayTypeArr.filter((d) => d == 'w').length
+    //     let HDay = dayTypeArr.filter((d) => d == 'h').length
+    //     setWeekday(wDay)
+    //     setHoliday(HDay)
+    //     setReserveDateArr(realDateArr)
+    //     let sumPrice = normalDayPrice * wDay + holidayPrice * HDay
+    //     if (sumPrice > 0) {
+    //         setTotalPrice(sumPrice)
+    //     }
+    //     setReserveDateCorrect(true)
+    // }
+
+    //新邏輯11/11~11/12算1夜
     const countDay = () => {
         const weekType = ['h', 'w', 'w', 'w', 'w', 'h', 'h']
         const dayTypeArr = []
 
         const startDayType = reserveStartDate.getDay()
         //.getDay() 日 一 二~六 回傳值 0 1 2 ~ 6
-        const startToEndDay = Math.round((reserveEndDate - reserveStartDate) / 86400000)
+        const startToEndDay = Math.round((reserveEndDate - reserveStartDate) / 86400000)-1
         if (startToEndDay < 0) {
             setWeekday('?')
             setHoliday('?')
@@ -281,7 +321,7 @@ export default function ReserveForm(props) {
     useEffect(() => {
         if (reserveStartDate && reserveEndDate) {
             let days = 0
-            days = Math.round((reserveEndDate - reserveStartDate) / 86400000) + 1
+            days = Math.round((reserveEndDate - reserveStartDate) / 86400000) 
             console.log('days', days)
             countDay()
         } else {
@@ -374,6 +414,7 @@ export default function ReserveForm(props) {
                                         <div className={classes.formInputTextBox + ' ' + classes.formInputTextBoxDate}>
                                             <BasicDatePicker
                                                 setReserveDate={setReserveDate}
+                                                
                                                 showDate={reserveEndDate}
                                                 type="end"
                                             />

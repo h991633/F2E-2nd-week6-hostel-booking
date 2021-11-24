@@ -119,29 +119,29 @@ export default function Reserve(props) {
         <div>
             <header>
                 <div
-                    class="reserveTitle"
+                    className="reserveTitle"
                     onClick={() => {
                         // postApiBooking(props.match.params.id)
                     }}
                 >
-                    <div class="stripeBlack2percent reserveTitleLeftBG"></div>
-                    <div class="reserveTitleRight">
-                        <div class="stripeBlack  reserveTitleRightBG"></div>
+                    <div className="stripeBlack2percent reserveTitleLeftBG"></div>
+                    <div className="reserveTitleRight">
+                        <div className="stripeBlack  reserveTitleRightBG"></div>
                         <a href="/F2E-2nd-week6-hostel-booking/">
-                        <h1 class="reserveTitleWord">WhiteSpace</h1>
+                        <h1 className="reserveTitleWord">WhiteSpace</h1>
                         </a>
                     </div>
                 </div>
                 <ImgBanner name={name} imageUrl={imageUrl} />
             </header>
-            <main class="reserveMain">
-                <div class="reserveMainLeft">
-                    <span class="reserveRoomName">
+            <main className="reserveMain">
+                <div className="reserveMainLeft">
+                    <span className="reserveRoomName">
                         {name}
                         <br />
                     </span>
 
-                    <span class="roomBasicDescription">
+                    <span className="roomBasicDescription">
                         房客人數限制：{descriptionShort.GuestMin}~{descriptionShort.GuestMax} 人<br />
                         床型：{descriptionShort.Bed.join(',')}
                         <br />
@@ -149,92 +149,92 @@ export default function Reserve(props) {
                         房間大小：{descriptionShort.Footage} 平方公尺
                         <br />
                     </span>
-                    <p class="roomDescription">{description}</p>
+                    <p className="roomDescription">{description}</p>
                     <div>
-                        <div class="Slash marginTopBottom28"></div>
-                        <div class="Slash marginTopBottom28"></div>
-                        <div class="Slash marginTopBottom28"></div>
+                        <div className="Slash marginTopBottom28"></div>
+                        <div className="Slash marginTopBottom28"></div>
+                        <div className="Slash marginTopBottom28"></div>
                     </div>
-                    <div class="checkIn">
-                        <span class="checkText">
+                    <div className="checkIn">
+                        <span className="checkText">
                             Check In
                             <br />
                         </span>
-                        <time class="checkTime">
+                        <time className="checkTime">
                             {checkInAndOut.checkInEarly} — {checkInAndOut.checkInLate}
                         </time>
                     </div>
-                    <div class="checkOut">
-                        <span class="checkText">
+                    <div className="checkOut">
+                        <span className="checkText">
                             Check Out
                             <br />
                         </span>
-                        <time class="checkTime">{checkInAndOut.checkOut}</time>
+                        <time className="checkTime">{checkInAndOut.checkOut}</time>
                     </div>
-                    <div class="iconSection">
-                        <div class={amenities['Wi-Fi'] ? 'roomIcon' : 'roomIconFalse'}>
+                    <div className="iconSection">
+                        <div className={amenities['Wi-Fi'] ? 'roomIcon' : 'roomIconFalse'}>
                             <WifiIcon />
                             &nbsp; Wi-Fi
                         </div>
-                        <div class={amenities['Television'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Television'] ? 'roomIcon' : 'roomIconFalse'}>
                             <TvIcon />
                             &nbsp; 電視
                         </div>
-                        <div class={amenities['Great-View'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Great-View'] ? 'roomIcon' : 'roomIconFalse'}>
                             <LandscapeOutlinedIcon />
                             &nbsp; 漂亮的視野
                         </div>
-                        <div class={amenities['Breakfast'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Breakfast'] ? 'roomIcon' : 'roomIconFalse'}>
                             <DiningOutlinedIcon />
                             &nbsp; 早餐
                         </div>
-                        <div class={amenities['Air-Conditioner'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Air-Conditioner'] ? 'roomIcon' : 'roomIconFalse'}>
                             <AirIcon />
                             &nbsp; 空調
                         </div>
-                        <div class={amenities['Smoke-Free'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Smoke-Free'] ? 'roomIcon' : 'roomIconFalse'}>
                             <SmokeFreeIcon />
                             &nbsp; 禁止吸煙
                         </div>
-                        <div class={amenities['Mini-Bar'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Mini-Bar'] ? 'roomIcon' : 'roomIconFalse'}>
                             <LocalBarIcon />
                             &nbsp; mini Bar
                         </div>
-                        <div class={amenities['Refrigerator'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Refrigerator'] ? 'roomIcon' : 'roomIconFalse'}>
                             <KitchenIcon />
                             &nbsp; 冰箱
                         </div>
-                        <div class={amenities['Child-Friendly'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Child-Friendly'] ? 'roomIcon' : 'roomIconFalse'}>
                             <ChildFriendlyIcon />
                             &nbsp; 適合兒童
                         </div>
-                        <div class={amenities['Room-Service'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Room-Service'] ? 'roomIcon' : 'roomIconFalse'}>
                             <RoomServiceIcon />
                             &nbsp; Room Service
                         </div>
-                        <div class={amenities['Sofa'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Sofa'] ? 'roomIcon' : 'roomIconFalse'}>
                             <WeekendIcon />
                             &nbsp; 沙發
                         </div>
-                        <div class={amenities['Pet-Friendly'] ? 'roomIcon' : 'roomIconFalse'}>
+                        <div className={amenities['Pet-Friendly'] ? 'roomIcon' : 'roomIconFalse'}>
                             <PetsIcon />
                             &nbsp; 寵物攜帶
                         </div>
                     </div>
                 </div>
-                <div class="reserveMainMid">
-                    <span class="weekdayPrice">NT.{normalDayPrice}</span>
+                <div className="reserveMainMid">
+                    <span className="weekdayPrice">NT.{normalDayPrice}</span>
                     <br />
-                    <span class="priceDescribe">平日(一~四)</span>
+                    <span className="priceDescribe">平日(一~四)</span>
                     <br />
                     <br />
-                    <span class="holidayPrice">NT.{holidayPrice}</span>
+                    <span className="holidayPrice">NT.{holidayPrice}</span>
                     <br />
-                    <span class="priceDescribe">假日(五~日)</span>
+                    <span className="priceDescribe">假日(五~日)</span>
                     <br />
                 </div>
-                <div class="reserveMainRight">
-                    <div class="reserveCalendar">
+                <div className="reserveMainRight">
+                    <div className="reserveCalendar">
                         <ReserveCalendar bookingDateArr={bookingDateArr} />
                     </div>
 
@@ -247,11 +247,11 @@ export default function Reserve(props) {
                         roomId={props.match.params.id}
                         getApiRoomDetail={getApiRoomDetail}
                     />
-                    <div class="doReserve"style={{marginLeft:'52px'}}>
-                        <div class="doReserveButton" style={{backgroundColor:'#f00',width: '153px'}} onClick={() => {ApiDeleteAllBooking()}}>
+                    <div className="doReserve"style={{marginLeft:'52px'}}>
+                        <div className="doReserveButton" style={{backgroundColor:'#f00',width: '153px'}} onClick={() => {ApiDeleteAllBooking()}}>
                             刪除所有預約
                         </div>
-                        <div class="doDeleteButtonBG stripeBlack24"> </div>
+                        <div className="doDeleteButtonBG stripeBlack24"> </div>
                     </div>
                     </div>
                 </div>

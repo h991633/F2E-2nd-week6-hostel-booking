@@ -79,13 +79,13 @@ function HomePage() {
     
 
     return (
-        <div class="roomImg" style={{ width: '100vw', minHeight: '100vh', background: 'url(' + nowBG + ')' }}>
-            <header class="indexHeader">
-                <div class="title">
-                    <div class="stripe41 titleLeftBG"></div>
-                    <div class="titleRight">
-                        <div class="stripe titleRightBG"></div>
-                        <h1 class="titleWord">
+        <div className="roomImg" style={{ width: '100vw', minHeight: '100vh', background: 'url(' + nowBG + ')' }}>
+            <header className="indexHeader">
+                <div className="title">
+                    <div className="stripe41 titleLeftBG"></div>
+                    <div className="titleRight">
+                        <div className="stripe titleRightBG"></div>
+                        <h1 className="titleWord">
                             White
                             <br />
                             Space
@@ -93,13 +93,13 @@ function HomePage() {
                     </div>
                 </div>
                 <div>
-                    <nav class="roomSelect">
+                    <nav className="roomSelect">
                         
                         {apiData.map((value,index)=>{
                             
                             return(
                             
-                                <Link to={`reserve/${apiData[index].id}`}><div class="roomButton" onMouseOver={(e) => handleHover(e, index)}>
+                                <Link to={`reserve/${apiData[index].id}`}><div className="roomButton" onMouseOver={(e) => handleHover(e, index)}>
                                 {value.name}
                                 </div></Link>
                             
@@ -108,35 +108,35 @@ function HomePage() {
                         })}
                         
                     </nav>
-                    <div class="stripe70 roomSelectBG"></div>
+                    <div className="stripe70 roomSelectBG"></div>
                 </div>
             </header>
 
-            {nowLoading?<div class="loading"><LoadingOutlined style={{ color:'#ADADAD',fontSize: '40px' }}/></div>:""}
+            {nowLoading?<div className="loading"><LoadingOutlined style={{ color:'#ADADAD',fontSize: '40px' }}/></div>:""}
 
-            <footer class="indexFooter">
-                <figcaption class="indexFigcaption">
-                    <div class="roomNumberBack">
-                        <div class="roomNumber">{nowRoomNumber}</div>
-                        <div class="roomNumberBG stripe70 "></div>
+            <footer className="indexFooter">
+                <figcaption className="indexFigcaption">
+                    <div className="roomNumberBack">
+                        <div className="roomNumber">{nowRoomNumber}</div>
+                        <div className="roomNumberBG stripe70 "></div>
                     </div>
-                    <div class="roomName">{nowRoomName}</div>
+                    <div className="roomName">{nowRoomName}</div>
                 </figcaption>
 
-                <aside class="indexAside">
-                    <div class="asideIcon">
-                                <a href="https://www.facebook.com/Whitespace/" target="_blank" rel="noreferrer noopener" class="iconLink">
+                <aside className="indexAside">
+                    <div className="asideIcon">
+                                <a href="https://www.facebook.com/Whitespace/" target="_blank" rel="noreferrer noopener" className="iconLink">
                                 <FacebookFilled style={{ fontSize: '20px' }}/> 
                                 </a>
                                 &nbsp;&nbsp;
-                                <a href="https://www.instagram.com/whitespace/" target="_blank" rel="noreferrer noopener" class="iconLink">
+                                <a href="https://www.instagram.com/whitespace/" target="_blank" rel="noreferrer noopener" className="iconLink">
                                 <InstagramOutlined style={{ fontSize: '20px' }} /> 
                                 </a>
                     </div>
 
-                    <div class="asideInformation"><PhoneFilled rotate={90} style={{ fontSize: '20px' }} /> &nbsp;&nbsp;02-17264937</div>
-                    <div class="asideInformation"><MailOutlined style={{ fontSize: '20px' }}/>&nbsp;&nbsp; whitespace@whitespace.com.tw</div>
-                    <div class="asideInformation"><HomeOutlined style={{ fontSize: '20px' }}/> &nbsp;&nbsp;台北市羅斯福路十段30號</div>
+                    <div className="asideInformation"><PhoneFilled rotate={90} style={{ fontSize: '20px' }} /> &nbsp;&nbsp;02-17264937</div>
+                    <div className="asideInformation"><MailOutlined style={{ fontSize: '20px' }}/>&nbsp;&nbsp; whitespace@whitespace.com.tw</div>
+                    <div className="asideInformation"><HomeOutlined style={{ fontSize: '20px' }}/> &nbsp;&nbsp;台北市羅斯福路十段30號</div>
                 </aside>
             </footer>
         </div>

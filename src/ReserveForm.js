@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     },
     result: {
         width: ' calc(100vw * 423 / 1499)',
-        minWidth :'280px',
+        minWidth: '280px',
 
         background: 'white',
         boxShadow: '0 2px 4px 0 rgba(0,0,0,0.50)',
@@ -123,7 +123,7 @@ export default function ReserveForm(props) {
     const setReserveDate = (ReserveDate, type) => {
         if (type == 'start') {
             setReserveStartDate(ReserveDate)
-            setReserveEndDate(datePlus(ReserveDate,1))
+            setReserveEndDate(datePlus(ReserveDate, 1))
         }
         if (type == 'end') {
             setReserveEndDate(ReserveDate)
@@ -181,7 +181,7 @@ export default function ReserveForm(props) {
 
         const startDayType = reserveStartDate.getDay()
         //.getDay() 日 一 二~六 回傳值 0 1 2 ~ 6
-        const startToEndDay = Math.round((reserveEndDate - reserveStartDate) / 86400000)-1
+        const startToEndDay = Math.round((reserveEndDate - reserveStartDate) / 86400000) - 1
         if (startToEndDay < 0) {
             setWeekday('?')
             setHoliday('?')
@@ -240,7 +240,7 @@ export default function ReserveForm(props) {
                 } else {
                     console.log('data.message', data.message)
                     setIsResultSuccess(false)
-                    setResultMsg(data.message+"，請將頁面重新整理以獲得最新預約情況")
+                    setResultMsg(data.message + '，請將頁面重新整理以獲得最新預約情況')
                 }
                 setIsLoading(false)
                 handleOpenResult()
@@ -321,7 +321,7 @@ export default function ReserveForm(props) {
     useEffect(() => {
         if (reserveStartDate && reserveEndDate) {
             let days = 0
-            days = Math.round((reserveEndDate - reserveStartDate) / 86400000) 
+            days = Math.round((reserveEndDate - reserveStartDate) / 86400000)
             console.log('days', days)
             countDay()
         } else {
@@ -333,16 +333,16 @@ export default function ReserveForm(props) {
     }, [reserveStartDate, reserveEndDate])
     return (
         <div>
-            <div class="doReserve">
+            <div className="doReserve">
                 <div
-                    class="doReserveButton"
+                    className="doReserveButton"
                     onClick={() => {
                         handleOpen()
                     }}
                 >
                     預約時段
                 </div>
-                <div class="doReserveButtonBG stripeBlack24"></div>
+                <div className="doReserveButtonBG stripeBlack24"></div>
             </div>
             {isLoading ? (
                 <div style={{ position: 'fixed', top: '50%', left: '50%' }}>
@@ -372,9 +372,9 @@ export default function ReserveForm(props) {
                                     <h1 className={classes.formTitle}>預約時段</h1>
 
                                     <div>
-                                        <div class="Slash"></div>
-                                        <div class="Slash"></div>
-                                        <div class="Slash"></div>
+                                        <div className="Slash"></div>
+                                        <div className="Slash"></div>
+                                        <div className="Slash"></div>
                                     </div>
                                     <br />
                                     <div className={classes.formInput}>
@@ -414,29 +414,28 @@ export default function ReserveForm(props) {
                                         <div className={classes.formInputTextBox + ' ' + classes.formInputTextBoxDate}>
                                             <BasicDatePicker
                                                 setReserveDate={setReserveDate}
-                                                
                                                 showDate={reserveEndDate}
                                                 type="end"
                                             />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="countDate">
-                                    <div class="countDateRow">
+                                <div className="countDate">
+                                    <div className="countDateRow">
                                         <span>平日時段</span>
                                         <span>{weekday}夜</span>
                                     </div>
-                                    <div class="countDateRow">
+                                    <div className="countDateRow">
                                         <span>假日時段</span>
                                         <span>{holiday}夜</span>
                                     </div>
                                 </div>
-                                <div class="countPrice"> = &nbsp; NT.{totalPrice}</div>
-                                <div class="finalCheck">
-                                    <div class="formCancel" onClick={handleClose}>
+                                <div className="countPrice"> = &nbsp; NT.{totalPrice}</div>
+                                <div className="finalCheck">
+                                    <div className="formCancel" onClick={handleClose}>
                                         取消
                                     </div>
-                                    <div class="formConfirm" onClick={confirmReserve}>
+                                    <div className="formConfirm" onClick={confirmReserve}>
                                         確定預約
                                     </div>
                                 </div>
@@ -464,28 +463,28 @@ export default function ReserveForm(props) {
                                 <div className={classes.formTop}>
                                     <h1 className={classes.formTitle}>預約{isResultSuccess ? '成功' : '失敗'}</h1>
                                     <div>
-                                        <div class="Slash"></div>
-                                        <div class="Slash"></div>
-                                        <div class="Slash"></div>
+                                        <div className="Slash"></div>
+                                        <div className="Slash"></div>
+                                        <div className="Slash"></div>
                                     </div>
                                 </div>
                                 {isResultSuccess ? (
-                                    <div class="resultSuccess">
+                                    <div className="resultSuccess">
                                         <CheckCircleOutlined style={{ color: '#ADE8C6', fontSize: '70px' }} />
                                     </div>
                                 ) : (
-                                    <div class="resultMsg">{resultMsg}</div>
+                                    <div className="resultMsg">{resultMsg}</div>
                                 )}
 
-                                <div class="finalCheck">
+                                <div className="finalCheck">
                                     <div></div>
                                     {isResultSuccess ? (
-                                        <div class="formConfirm" onClick={handleCloseResult}>
+                                        <div className="formConfirm" onClick={handleCloseResult}>
                                             回頁面
                                         </div>
                                     ) : (
                                         <div
-                                            class="formConfirm"
+                                            className="formConfirm"
                                             onClick={() => {
                                                 handleCloseResult()
                                                 handleOpen()

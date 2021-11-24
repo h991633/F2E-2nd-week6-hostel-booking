@@ -34,11 +34,9 @@ const CustomPickersDay = styled(PickersDay, {
   // 以上為範例的css
   ...(isReserveDay&&!isPastDay && {
     borderRadius: 0,
-    background:` linear-gradient(
-      45deg, 
-      rgba(0, 0,0, 1) 0%, rgba(0, 0,0, 1) 2%, rgba(255, 255, 255, 0) 2%, rgba(255, 255, 255, 0) 10%,rgba(0, 0,0, 1) 10%, rgba(0, 0,0, 1) 12%, rgba(255, 255, 255, 0) 12%, rgba(255, 255, 255, 0) 20%,rgba(0, 0,0, 1) 20%, rgba(0, 0,0, 1) 22%, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 30%,rgba(0, 0,0, 1) 30%, rgba(0, 0,0, 1) 32%, rgba(255, 255, 255, 0) 32%, rgba(255, 255, 255, 0) 40%,rgba(0, 0,0, 1) 40%, rgba(0, 0,0, 1) 42%, rgba(255, 255, 255, 0) 42%, rgba(255, 255, 255, 0) 50%,rgba(0, 0,0, 1) 50%, rgba(0, 0,0, 1) 52%, rgba(255, 255, 255, 0) 52%, rgba(255, 255, 255, 0) 60%,rgba(0, 0,0, 1) 60%, rgba(0, 0,0, 1) 62%, rgba(255, 255, 255, 0) 62%, rgba(255, 255, 255, 0) 70%,rgba(0, 0,0, 1) 70%, rgba(0, 0,0, 1) 72%, rgba(255, 255, 255, 0) 72%, rgba(255, 255, 255, 0) 80%,rgba(0, 0,0, 1) 80%, rgba(0, 0,0, 1) 82%, rgba(255, 255, 255, 0) 82%, rgba(255, 255, 255, 0) 90%,rgba(0, 0,0, 1) 90%, rgba(0, 0,0, 1) 92%, rgba(255, 255, 255, 0) 92%, rgba(255, 255, 255, 0) 100%
-      )`,
-    backgroundSize : "24px 24px",
+    background:` repeating-linear-gradient(
+      45deg, rgba(149, 149,149, 1), rgba(149, 149,149, 1), rgba(149, 149,149, 0),rgba(149, 149,149, 0),rgba(149, 149,149, 0),rgba(149, 149,149, 0),rgba(149, 149,149, 0),rgba(149, 149,149, 0) 5.1px)`,
+    
   }),
   ...(!isReserveDay && {
     borderRadius: 0,

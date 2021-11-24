@@ -469,9 +469,15 @@ a {
     );
     background-size: 32px 32px;
 }
-/* for(let i=0;i<=90;i+=10){
+/* let str="";
+for(let i=0;i<=90;i+=10){
   str+=`rgba(0, 0,0, 1) ${i+2}% ${i+4}%, rgba(255, 255, 255, 0) ${i+4}% ${i+12}%,`
-  } */
+  } 
+  方法2:
+  background: repeating-linear-gradient(
+      45deg, rgba(149, 149,149, 1), rgba(149, 149,149, 1), rgba(149, 149,149, 0),rgba(149, 149,149, 0),rgba(149, 149,149, 0),rgba(149, 149,149, 0),rgba(149, 149,149, 0),rgba(149, 149,149, 0) 5.1px),
+    
+  */
 .reserveMain {
     margin-top: 47px;
     display: flex;

@@ -124,9 +124,9 @@ export default function Reserve(props) {
                         // postApiBooking(props.match.params.id)
                     }}
                 >
-                    <div className="stripeBlack2percent reserveTitleLeftBG"></div>
+                    <div className="stripeGrey2percent reserveTitleLeftBG"></div>
                     <div className="reserveTitleRight">
-                        <div className="stripeBlack  reserveTitleRightBG"></div>
+                        <div className="stripeGrey  reserveTitleRightBG"></div>
                         <a href="/F2E-2nd-week6-hostel-booking/">
                         <h1 className="reserveTitleWord">WhiteSpace</h1>
                         </a>
@@ -251,7 +251,7 @@ export default function Reserve(props) {
                         <div className="doReserveButton" style={{backgroundColor:'#f00',width: '153px'}} onClick={() => {ApiDeleteAllBooking()}}>
                             刪除所有預約
                         </div>
-                        <div className="doDeleteButtonBG stripeBlack24"> </div>
+                        <div className="doDeleteButtonBG stripeGrey24"> </div>
                     </div>
                     </div>
                 </div>

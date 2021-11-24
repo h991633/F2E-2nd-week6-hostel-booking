@@ -342,7 +342,7 @@ export default function ReserveForm(props) {
                 >
                     預約時段
                 </div>
-                <div className="doReserveButtonBG stripeBlack24"></div>
+                <div className="doReserveButtonBG stripeGrey24"></div>
             </div>
             {isLoading ? (
                 <div style={{ position: 'fixed', top: '50%', left: '50%' }}>

@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import {HashRouter } from 'react-router-dom'
 import './index.css'
 // import App from './App';
 import Router from './Router';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <BrowserRouter>
-  <React.StrictMode>
-    <Router />
-  </React.StrictMode>
-  </BrowserRouter>,
+  // <BrowserRouter>
+  // <React.StrictMode>
+  //   <Router />
+  // </React.StrictMode>
+  // </BrowserRouter>,
+   <HashRouter>
+   <React.StrictMode>
+     <Router />
+   </React.StrictMode>
+   </HashRouter>,
   document.getElementById('root')
 );
 

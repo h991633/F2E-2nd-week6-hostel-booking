@@ -11,14 +11,13 @@ import {
   } from '@ant-design/icons';
 function HomePage() {
     const [apiData, setApiData] = useState([])
-    
     const [nowBG, setNowBG] = useState(
         'https://i.imgur.com/PyVqqHa.png'
     )
     const [nowRoomName,setNowRoomName]=useState("")
     const [nowRoomNumber,setNowRoomNumber]=useState("")
     const [nowLoading,setNowLoading]=useState(true)
-    // const [roomButtonHover,setRoomButtonHover]=useState([])
+ 
     useEffect(() => {
         document.title="White Space"
         fetch('https://challenge.thef2e.com/api/thef2e2019/stage6/rooms', {
@@ -38,36 +37,11 @@ function HomePage() {
                 setNowRoomNumber("05")
                 setNowLoading(false)
                 
-                // data.items.map((value)=>{
-                //     getApiRoomDetail(value.id)
-                //     return 0
-                // })
-                // getApiRoomDetail(data.items[0].id)
             })
             .catch((e) => {
                 alert('ERR:' + e)
             })
     }, [])
-
-    const getApiRoomDetail = (id) => {
-        console.log('id', id)
-        fetch('https://challenge.thef2e.com/api/thef2e2019/stage6/room/' + id, {
-            method: 'GET',
-            headers: {
-                accept: 'application/json',
-                Authorization: 'Bearer ydf7YJAusCU3YIdo4zZGxDzGu6qHJ2KI5aozP6SIcOsUnpaCdqv4uPJv9rSP',
-            },
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log('RoomDetaildata', data)
-                // setRoomDetailData(data.items);
-                
-            })
-            .catch((e) => {
-                alert('ERR:' + e)
-            })
-    }
 
     const handleHover = (e, index) => {
         // e.preventDefault()

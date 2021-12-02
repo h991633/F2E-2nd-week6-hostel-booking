@@ -814,9 +814,9 @@ for(let i=0;i<=90;i+=10){
       min-width: 275px;
     }
     .roomIcon {
-        width: 70px;
+        width: 30%;
     }
     .roomIconFalse {
-        width: 70px;
+        width: 30%;
     }
 }
